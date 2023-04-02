@@ -25,18 +25,16 @@ function handleInputChange(evt) {
     fetchCountries(inputValue)
     .then(data => {
         if (data.length > 10) {
-            return Notify.info('Too many matches found. Please enter a more specific name.');
+            return Notify.info('Too many matches found. Please enter a more specific name.', {position: 'center-top',});
 
-        } else if (data.length > 2 && data.length < 10) {
+        } else if (data.length >= 2 && data.length <= 10) {
             countryListEl.innerHTML = createCountriesList(data);
-            console.log(data);
 
         } else {
             countryInfoEl.innerHTML = createCountryInfo(data);
-            console.log(data);
         }   
     })
     .catch(err => {
-        return Notify.failure('Oops, there is no country with that name');
+        return Notify.failure('Oops, there is no country with that name', {position: 'center-top',});
     })
 }

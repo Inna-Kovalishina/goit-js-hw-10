@@ -1,34 +1,34 @@
 
 export const createCountriesList = data => {
     const countriesListMarkup = data.map(({flags, name}) => {
-        return `<li class = "listItem">
+        return `<li class = "list-Item">
                     <img src="${flags.svg}" height="40px" width="40px"/>
                     <span>${name.common}</span>
                 </li>`
     }).join("");
-    console.log(countriesListMarkup);
+    return countriesListMarkup;
 }
 
 
 export const createCountryInfo = data => {
     const countryInfoMarkup = data.map(({flags, name, capital, population, languages}) => {
-        return `<ul class="card">
-                    <li>
+        return `<ul class="country-card">
+                    <li class = "info-Item">
                         <img src="${flags.svg}" height="40px" width="40px"/>
                         <h1>${name.common}</h1>
                     </li>
-                    <li>
-                        <h2>Capital:${capital}</h2>
+                    <li class = "info-Item">
+                        <h3>Capital: <span>${capital}</span></h3>
                     </li> 
-                    <li>
-                        <h2>Population:${population}</h2>
+                    <li class = "info-Item">
+                        <h3>Population: <span>${population}</span></h3>
                     </li>
-                    <li>
-                        <h2>Languages:${officialLanguages(languages)}</h2>
+                    <li class = "info-Item">
+                        <h3>Languages: <span>${officialLanguages(languages)}</span></h3>
                     </li>
                 </ul>`
     }).join("");
-    console.log(countryInfoMarkup);
+    return countryInfoMarkup;
 }
 
 const officialLanguages = (languages) => (

@@ -15,7 +15,7 @@ export const createCountryInfo = data => {
     const countryInfoMarkup = data.map(({flags, name, capital, population, languages}) => {
         return `<ul class="country-card">
                     <li class = "info-Item">
-                        <img src="${flags.svg}" height="40px" width="40px" alt="${flags.alt}/>
+                        <img src="${flags.svg}" height="40px" width="40px" alt="${flags.alt}" />
                         <h1>${name.common}</h1>
                     </li>
                     <li class = "info-Item">

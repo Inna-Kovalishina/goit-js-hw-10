@@ -25,7 +25,7 @@ export const createCountryInfo = data => {
                         <h3>Population: <span>${population}</span></h3>
                     </li>
                     <li class = "info-Item">
-                        <h3>Languages: <span>${officialLanguages(languages)}</span></h3>
+                        <h3>Languages: <span>${officialLanguages(languages).join(", ")}</span></h3>
                     </li>
                 </ul>`
     }).join("");
